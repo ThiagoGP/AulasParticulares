@@ -1,0 +1,36 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+  <div class="index">
+
+    <span id="cadastrar"> <a href="/teacher/cadastrar" id="cadastra-table">Cadastrar</a> </span>
+
+    <table width="100%">
+
+      <thead>
+        
+        <th style="width: 300px"> Nome</th>
+        <th>Acampanhamento</th>
+        <th>Ação</th>
+      </thead>
+
+      <tbody>
+
+        {% for teacher in teachers %}
+          
+          <tr>
+            <td class="img-table"><img src="{{teacher.avatar_url}}" alt=""><span>{{teacher.name}}</span></td>
+            <td class="services">{{teacher.subjects_taught}}</td>
+            <td>
+              <a href="/teacher/{{teacher.id}}">Ver</a>
+            </td>
+          </tr>
+
+        
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+{% endblock content %}

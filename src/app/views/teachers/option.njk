@@ -1,0 +1,27 @@
+{% if teacher.education_level == "Ensino Medio Completo" %}
+  <option value="Ensino Medio Completo">Ensino Medio Completo</option>
+  <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+  <option value="Mestrado">Mestrado</option>
+  <option value="Doutorado">Doutorado</option>
+{% endif %}
+
+{% if teacher.education_level == "Ensino Superior Completo" %}
+  <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+  <option value="Ensino Medio Completo">Ensino Medio Completo</option>
+  <option value="Mestrado">Mestrado</option>
+  <option value="Doutorado">Doutorado</option>
+{% endif %}
+
+{% if teacher.education_level == "Doutorado" %}
+  <option value="Doutorado">Doutorado</option>
+  <option value="Ensino Medio Completo">Ensino Medio Completo</option>
+  <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+  <option value="Mestrado">Mestrado</option>
+{% endif %}
+
+{% if teacher.education_level == "Mestrado" %}
+  <option value="Mestrado">Mestrado</option>
+  <option value="Ensino Medio Completo">Ensino Medio Completo</option>
+  <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+  <option value="Doutorado">Doutorado</option>
+{% endif %}

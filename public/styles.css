@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+body{
+   background-color:  rgb(113, 89, 193);
+   font-family: 'Roboto', sans-serif;
+}
+header{
+    
+    padding: 40px;
+    background-color: aquamarine;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #507719;
+    padding: 24px;
+    font-size: 24px;
+
+}
+
+.active{
+    font-weight: bold;
+}
+a:hover{
+   text-decoration: underline;
+}
+
+.card{
+   
+    margin: 32px auto;
+    width:  700px;
+    min-height: 500px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    box-shadow: 10px 7px 5px black;
+
+}
+
+.info{
+    margin: 16px;
+}
+.item{
+    border-top: 1px solid #000;
+    padding-top: 16px;
+}
+.infoalto{
+    font-size: 16px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 8px;
+}
+.item div:nth-child(1){
+    padding: 4px;
+    font-size: 16px;
+    color: #777;
+}
+
+.item div:nth-child(2){
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: rgb(43, 33, 33);
+    font-size: 24px;
+}
+
+input[type="url"],
+input[type="text"]{   
+  border: 1px solid rgb(121, 113, 113);
+  width: 100%;
+
+}
+
+.index{
+    margin: 32px auto;
+    width: 950px;
+    min-height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+
+
+
+.span-show{
+    padding: 4px;
+    background-color: yellow;
+    font-size: 16px;
+    margin-bottom: 4px;
+    border-radius: 10px;
+}
+
+.submit{
+    width: 100%;
+    background-color: yellow;
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 4px;
+    cursor: pointer;
+
+}
+
+#delet{
+    background-color: red;
+}
+
+.imagem{
+
+    height: 40px;
+    width: 40px;
+}
+
+.edit{
+
+    padding: 8px;
+    background-color: yellow;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    border-radius: 10px;
+
+}
+
+
+img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 20px;
+    
+}
+
+th{
+    padding-top: 50px;
+    color: #777;
+    text-align: left;
+    padding-bottom: 10px;
+    
+}
+thead th:first-child,
+thead th:last-child{
+    padding-left: 20px;
+}
+
+td{
+    border-bottom: 1px solid black;
+    position: relative;
+
+
+}
+
+td span{
+    position: absolute;
+    bottom: 10px;
+    padding-left: 6px;
+
+
+}
+
+tbody td:last-child{
+
+    padding: 4px;
+    background-color: yellow;
+    border-radius: 10px;
+    text-align: center;
+   
+}
+
+tbody td:last-child a{
+    color: black;
+    font-weight: bolder;
+}
+
+
+#cadastrar{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 8px;
+    background-color: yellow;
+    border-radius: 4px;
+}
+
+#cadastrar a{
+    color: black;
+}
+
+
+

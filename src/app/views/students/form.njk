@@ -1,0 +1,71 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  
+  <form action="/students" method="post" class="card">
+   <section class="img" style="background: url('https://images.unsplash.com/photo-1558021211-6d1403321394?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')  no-repeat center center / cover"></section>
+  
+   <section class="info">
+     <h3>Cadastrar Estudante</h3>
+        <div class="item">
+            <div>Foto do Estudante</div>
+            <div><input type="url" name="url" placeholder="https://"></div>
+        </div>
+
+        <div class="item">
+         <div>Nome do Estudante</div>
+         <div><input type="text" name="name"></div>
+        </div>
+
+        <div class="item">
+        <div>Data de Nascimento</div>
+        <div><input type="date" name="birthday"></div>
+        </div>
+
+        <div class="item">
+            <div>Email do Estudante</div>
+            <div><input type="email" name="email"></div>
+        </div>
+
+        <div class="item">
+          <div>Ano Escolar</div>
+          <div>
+          <select name="year">
+                <option value="5">5º ano do ensino fundamental</option>
+                <option value="6">6º ano do ensino fundamental</option>
+                <option value="7">7º ano do ensino fundamental</option>
+                <option value="8">8º ano do ensino fundamental</option>
+                <option value="9">9º ano do ensino fundamental</option>
+                <option value="1">1º ano do ensino médio</option>
+                <option value="2">2º ano do ensino médio</option>
+                <option value="3">3º ano do ensino médio</option>
+          </select>
+          </div>
+        </div>
+
+        <div class="item">
+          <div>Carga Horária semanal</div>
+          <div><input type="number" name="chs" min="1"></div>
+        </div>
+
+        <div class="item">
+          <div>Professor:</div>
+          <div>
+            <select name="teacher_id">
+            {% for teacher in teacheroption %}
+              <option value="{{teacher.id}}">{{teacher.name}}
+              </option>
+            {% endfor %}
+
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="submit">Salvar</button>
+        <button type="reset" class="submit" id="delet">Resetar formulário</button>
+    </section>
+  
+  
+  </form>
+
+{% endblock content %}

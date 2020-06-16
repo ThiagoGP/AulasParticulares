@@ -1,0 +1,63 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="index">
+
+        <span id="cadastrar">
+            <a href="/students/form" id="cadastra-table">Cadastrar</a>
+        </span> 
+
+            <form action="/students" method="get">
+             <input type="text" name="" id="">
+            </form>
+
+        <table width="100%">
+
+            <thead>
+
+                <th style="width: 300px">
+                    Nome</th>
+                <th>Email</th>
+                <th>Ano Escolar</th>
+                <th>Ação</th>
+            </thead>
+
+            <tbody>
+
+                {% for student in students %}
+
+                    <tr>
+                        <td class="img-table"><img src="{{student.url}}" alt="">
+                            <span>{{student.name}}</span></td>
+                        <td class="services">{{student.email}}</td>
+                        <td class="services">
+                            {% if student.year == "5"%}5º do ensino fundamental
+                            {% endif %}
+                            {% if student.year == "6"%}6º do ensino fundamental
+                            {% endif %}
+                            {% if student.year == "7"%}7º do ensino fundamental
+                            {% endif %}
+                            {% if student.year == "8"%}8º do ensino fundamental
+                            {% endif %}
+                            {% if student.year == "9"%}9º do ensino fundamental
+                            {% endif %}
+                            {% if student.year == "1" %}1º do ensino médio
+                            {% endif %}
+                            {% if student.year == "2" %}2º do ensino médio
+                            {% endif %}
+                            {% if student.year == "3" %}3º do ensino médio
+                            {% endif %}
+
+                        </td>
+                        <td>
+                            <a href="/students/{{student.id}}">Ver</a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock content %}

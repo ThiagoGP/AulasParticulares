@@ -1,0 +1,71 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <form action="/teacher?_method=PUT" method="post" class="card">
+    <section class="img" style="background: url('{{teacher.url}}')  no-repeat center center / cover"></section>
+
+    <section class="info">
+      <h3 class="infoalto">Editar Professor</h3>
+      <div class="item">
+        <div>Foto do Professor</div>
+        <div><input type="url" name="avatar_url" placeholder="https://" value="{{teacher.avatar_url}}"></div>
+      </div>
+      <div class="item">
+        <div>Nome do Professor</div>
+        <div><input type="text" name="name" placeholder="Digite o nome do professor" value="{{teacher.name}}"></div>
+      </div>
+
+      <div class="item">
+        <div>Data de Nascimento</div>
+        <div><input type="date" name="birth_date" value="{{teacher.birth_date}}"></div>
+      </div>
+
+      <div class="item">
+        <div>Escolaridade</div>
+        <div>
+          <select name="education_level">
+
+            {% include 'teachers/option.njk'%}}
+          </select>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Presencial ou EAD</div>
+        <div>
+          <span><input type="radio" name="class_type" value="P" {% if teacher.class_type ==  'P'%} checked="checked" {% endif %}>Presencial</span>
+          <span><input type="radio" name="class_type" value="D" {% if teacher.class_type == 'D' %} checked="checked" {% endif %}>Á distancia</span>
+        </div>
+      </div>
+
+      <div class="item">
+
+        <div>Matéria</div>
+        <div>
+          <input type="text" name="subjects_taught" placeholder="Separar por virgula" value="{{teacher.subjects_taught}}">
+        </div>
+      </div>
+      <input type="hidden" name="id" value="{{teacher.id}}">
+
+      <button type="submit" class="submit">Salvar</button>
+    </form>
+    <form action="/teacher?_method=DELETE" method="post"  id="deletar">
+      <input type="hidden" name="id" value="{{teacher.id}}">
+      <button type="submit" class="submit" id="delet">DELETAR</button>
+    </form>
+
+  </section>
+
+</div>
+
+<script>
+    const delet = document.querySelector("#deletar");
+    delet.addEventListener("submit", function(event){
+    const confirmation = confirm("Realmente desejar deletar?");
+    if(!confirmation){
+    event.preventDefault();
+    }
+    })
+
+</script>
+{% endblock content %}
